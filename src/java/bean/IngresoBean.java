@@ -35,7 +35,7 @@ public class IngresoBean {
                 
                 FacesContext.getCurrentInstance().getExternalContext().getSessionMap()
                         .put("usuario", us);
-                resultado = "éxito";
+                resultado = "principal";
             } else {
                 resultado = "error";
             }
@@ -64,6 +64,12 @@ public class IngresoBean {
     public String cierraSesion() {
 		FacesContext.getCurrentInstance().getExternalContext()
 				.invalidateSession();
-		return "index?faces-redirect-true";
+		return "cierre?faces-redirect=true";
 	}
+
+    public String volverSesion(){
+                FacesContext.getCurrentInstance().getExternalContext()
+				.invalidateSession();
+		return "index?faces-redirect=true";
+    }
 }
