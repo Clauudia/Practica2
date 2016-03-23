@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 8/03/2016 11:28:59 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Ingreso" table="ingreso" schema="public" optimistic-lock="version">
+        <id name="idIngreso" type="int">
+            <column name="id_ingreso" />
+            <generator class="assigned" />
+        </id>
+        <property name="nickname" type="string">
+            <column name="nickname" length="15" />
+        </property>
+        <property name="contrasenia" type="java.lang.Integer">
+            <column name="contrasenia" />
+        </property>
+    </class>
+</hibernate-mapping>
