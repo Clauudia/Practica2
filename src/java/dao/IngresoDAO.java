@@ -10,10 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.Query;
-/**
- *
- * @author claudia
- */
+
 public class IngresoDAO {
     
     private Session sesion;

@@ -11,10 +11,7 @@ import javax.faces.context.FacesContext;
 
 import dao.IngresoDAO;
 import model.Ingreso;
-/**
- *
- * @author claudia
- */
+
 public class IngresoBean {
     
     private Ingreso user = new Ingreso(); 
@@ -50,9 +47,23 @@ public class IngresoBean {
         
     }
     
+    public boolean verificarSesion() {
+		boolean estado;
+
+		if (FacesContext.getCurrentInstance().getExternalContext()
+				.getSessionMap().get("usuario") == null) {
+			estado = false;
+		} else {
+			estado = true;
+		}
+
+		return estado;
+	}
+
+    
     public String cierraSesion() {
 		FacesContext.getCurrentInstance().getExternalContext()
 				.invalidateSession();
-		return "index";
+		return "index?faces-redirect-true";
 	}
 }
